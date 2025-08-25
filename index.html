@@ -664,11 +664,11 @@
             // Kirim nilai ke WhatsApp
             function sendToWhatsApp() {
                 const studentName = studentNameInput.value.trim() || 'Siswa';
-                const phoneNumber = '085746024580';
+                const phoneNumber = '6285746024580'; // Format internasional tanpa tanda +
                 const message = `Halo, saya ${studentName} telah menyelesaikan kuis perkalian dengan hasil: Nilai ${score}/10 (Benar: ${correctAnswers}, Salah: ${wrongAnswers})`;
                 
                 const encodedMessage = encodeURIComponent(message);
-                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
                 
                 window.open(whatsappURL, '_blank');
             }
